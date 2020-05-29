@@ -4,9 +4,7 @@
 
 @model HairSalon.Models.Client
 
-<h2>Edit</h2>
-
-<h4>Edit this Client: @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)p</h4>
+<h3>Edit this Client: @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)p</h3>
 
 @using (Html.BeginForm())
 {
@@ -17,20 +15,20 @@
 
     @Html.LabelFor(model => model.LastName)
     @Html.TextBoxFor(model => model.LastName)
-
+    <br>
     @Html.LabelFor(model => model.Phone)
     @Html.TextBoxFor(model => model.Phone)
-
+    <br>
     @Html.LabelFor(model => model.Birthday)
     @Html.TextBoxFor(model => model.Birthday, "{0:yyyy-MM-dd}", new { type="date" })
-
+    <br>
     @Html.LabelFor(model => model.ClientSince)
     @Html.TextBoxFor(model => model.ClientSince, "{0:yyyy-MM-dd}", new { type="date" })
-
+    <br>
     @Html.LabelFor(model => model.Stylist)
     @Html.DropDownList("StylistId")
-    
-    <input type="submit" value="Save" />
+    <br>
+    <input type="submit" value="Save" class="btn btn-primary"/>
 }
-
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<br>
+<p><b>@Html.ActionLink("Back to Client list", "Index")</p></b>

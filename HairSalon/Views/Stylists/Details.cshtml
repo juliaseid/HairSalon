@@ -5,32 +5,41 @@
 @using HairSalon.Models;
 @model HairSalon.Models.Stylist;
 
-<h2>Stylist Details</h2>
+<h3>Stylist Details</h3>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<h4>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h4>
 
-<h4>Days:</h4>
-<p>Monday: @Html.DisplayFor(model => model.Monday)</p>
-<p>Tuesday:@Html.DisplayFor(model => model.Tuesday)</p>
-<p>Wednesday: @Html.DisplayFor(model => model.Wednesday)</p>
-<p>Thursday: @Html.DisplayFor(model => model.Monday)</p>
-<p>Friday: @Html.DisplayFor(model => model.Friday)</p>
-<p>Saturday: @Html.DisplayFor(model => model.Saturday)</p>
-<p>Sunday: @Html.DisplayFor(model => model.Sunday)</p>
+<div class="well">
+  <div class = "row">
+    <div class = "col-md-6">
+      <h5>Days:</h5>
 
-<ul>
-<h4>Clients:</h4>
-@if (@Model.Clients.Count == 0)
-{
-  <p>No clients found</p>
-}
+        <p>Monday: @Html.DisplayFor(model => model.Monday)</p>
+        <p>Tuesday:@Html.DisplayFor(model => model.Tuesday)</p>
+        <p>Wednesday: @Html.DisplayFor(model => model.Wednesday)</p>
+        <p>Thursday: @Html.DisplayFor(model => model.Monday)</p>
+        <p>Friday: @Html.DisplayFor(model => model.Friday)</p>
+        <p>Saturday: @Html.DisplayFor(model => model.Saturday)</p>
+        <p>Sunday: @Html.DisplayFor(model => model.Sunday)</p>
+      @* </div> *@
+    </div>
+    <div class = "col-md-6">
+      <ul>
+      <h5>Clients:</h5>
+      @if (@Model.Clients.Count == 0)
+      {
+        <p>No clients found</p>
+      }
 
-@foreach (Client client in @Model.Clients)
-{
-  <li>@client.FirstName @client.LastName</li>
-}
-</ul>
-
-<p>@Html.ActionLink("Back to Stylists", "Index")</p>
-<p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
-<p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
+      @foreach (Client client in @Model.Clients)
+      {
+        <li>@client.FirstName @client.LastName</li>
+      }
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+<p><b>@Html.ActionLink("Back to Stylists", "Index")</b></p>
+<p><b>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</b></p>
+<p><b>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</b></p>

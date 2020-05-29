@@ -4,28 +4,32 @@
 
 @model HairSalon.Models.Client
 
-<h4>Add a new Client</h4>
+<h3>Add a new Client</h3>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.FirstName)
+  <div class = "well">
+    @Html.LabelFor(model => model.FirstName)  
     @Html.TextBoxFor(model => model.FirstName)
 
-    @Html.LabelFor(model => model.LastName)
+    @Html.LabelFor(model => model.LastName)  
     @Html.TextBoxFor(model => model.LastName)
-
-    @Html.LabelFor(model => model.Phone)
+    <br>
+    @Html.LabelFor(model => model.Phone)   
     @Html.TextBoxFor(model => model.Phone)
-
-    @Html.LabelFor(model => model.Birthday)
+    <br>
+    @Html.LabelFor(model => model.Birthday)  
     @Html.TextBoxFor(model => model.Birthday, "{0:yyyy-MM-dd}", new { type="date" })
-
-    @Html.LabelFor(model => model.ClientSince)
+    <br>
+    @Html.LabelFor(model => model.ClientSince)   
     @Html.TextBoxFor(model => model.ClientSince, "{0:yyyy-MM-dd}", new { type="date" })
-
-    @Html.LabelFor(model => model.Stylist)
+    <br>
+    @Html.LabelFor(model => model.StylistId)  
     @Html.DropDownList("StylistId")
+  </div>
+  <br>
 
-    <input type="submit" value="Add new Client" class="btn btn-default" />
+    <input type="submit" value="Add new Client" class="btn btn-primary" />
 }
-<p>@Html.ActionLink("Show all Clients", "Index")</p>
+<br>
+<p><b>@Html.ActionLink("Show all Clients", "Index")</b></p>

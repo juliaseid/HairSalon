@@ -4,13 +4,16 @@
 
 @model HairSalon.Models.Client
 
-<h2>Client Details</h2>
+<h3>Client Details</h3>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.FirstName): @Html.DisplayFor(model => model.FirstName)</h3>
-<h3>@Html.DisplayNameFor(model => model.LastName): @Html.DisplayFor(model => model.LastName)</h3>
-<h3>@Html.DisplayNameFor(model => model.Phone): @Html.DisplayFor(model => model.Phone)</h3>
-<h3>@Html.DisplayNameFor(model => model.Birthday): @Html.DisplayFor(model => model.Birthday)</h3>
-<h3>@Html.DisplayNameFor(model => model.ClientSince): @Html.DisplayFor(model => model.ClientSince)</h3>
-<p>@Html.ActionLink("Back to list", "Index")</p>
-<p>@Html.ActionLink("Edit Item", "Edit", new { id = Model.ItemId })</p>
-<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.ItemId })</p>
+<div class = "well">
+  <h4>@Html.DisplayNameFor(model => model.FirstName): @Html.DisplayFor(model => model.FirstName)</h4>
+  <h4>@Html.DisplayNameFor(model => model.LastName): @Html.DisplayFor(model => model.LastName)</h4>
+  <h4>@Html.DisplayNameFor(model => model.Phone): @Html.DisplayFor(model => model.Phone)</h4>
+  <h4>@Html.DisplayNameFor(model => model.Birthday): @Html.DisplayFor(model => model.Birthday)</h4>
+  <h4>@Html.DisplayNameFor(model => model.ClientSince): @Html.DisplayFor(model => model.ClientSince)</h4>
+</div>
+<br>
+<p><b>@Html.ActionLink("Edit Client", "Edit", new { id = Model.ClientId })</b></p>
+<p><b>@Html.ActionLink("Delete Client", "Delete", new { id = Model.ClientId })</b></p>
+<p><b>@Html.ActionLink("Back to Client List", "Index")</b></p>
