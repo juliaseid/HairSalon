@@ -17,6 +17,12 @@
     @Html.LabelFor(model => model.Phone)
     @Html.TextBoxFor(model => model.Phone)
 
+    @Html.LabelFor(model => model.Birthday)
+    @Html.TextBoxFor(model => model.Birthday, "{0:yyyy-MM-dd}", new { type="date" })
+
+    @Html.LabelFor(model => model.ClientSince)
+    @Html.TextBoxFor(model => model.ClientSince, "{0:yyyy-MM-dd}", new { type="date" })
+
     @Html.LabelFor(model => model.Stylist)
     @Html.DropDownList("StylistId")
 
