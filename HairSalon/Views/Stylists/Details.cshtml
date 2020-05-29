@@ -1,0 +1,56 @@
+@{
+  Layout = "_Layout";
+}
+
+@using HairSalon.Models;
+@model HairSalon.Models.Stylist;
+
+<h2>Stylist Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+
+<h4>Days:</h4>
+@if (model => model.Monday == true)
+{
+  <p>Monday</p>
+}
+@if (model => model.Tuesday == true)
+{
+  <p>Tuesday</p>
+}
+@if (model => model.Wednesday == true)
+{
+  <p>Wednesday</p>
+}
+@if (model => model.Thursday == true)
+{
+  <p>Thursday</p>
+}
+@if (model => model.Friday == true)
+{
+  <p>Friday</p>
+}
+@if (model => model.Saturday == true)
+{
+  <p>Saturday</p>
+}
+@if (model => model.Sunday == true)
+{
+  <p>Sunday</p>
+}
+<ul>
+<h4>Clients:</h4>
+@if (@Model.Clients.Count == 0)
+{
+  <p>No clients found</p>
+}
+
+@foreach (Client client in @Model.Clients)
+{
+  <li>@client.FirstName @client.LastName</li>
+}
+</ul>
+
+<p>@Html.ActionLink("Back to Stylists", "Index")</p>
+<p>@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
+<p>@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
