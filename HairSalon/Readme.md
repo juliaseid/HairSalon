@@ -40,7 +40,6 @@ _Have a bug or an issue with this application? [Open a new issue] here on GitHub
 | **Site allows salon owner to select a stylist and see details, including a list of clients** | User Input: "Sandy" | Output: Sandy Simpson: Monday, Tuesday, Wednesday, Saturday, Sunday, Clients: Peter Piper, Paul Santos, Mary Lamb|
 | **Form allows salon owner create new stylists** | User Input:"Cindy, Thursday, Friday, Saturday" | Output: "Cindy works on Thursday, Friday and Saturday"|
 | **Form allows salon owner to add new clients with a specific stylist** | User Input: Uri LeHaire, 425-222-2255, Cindy | Output: "Uri LeHaire's stylist is Cindy |
-| **Site displays clients in order by birthday under each stylist ** | User Input: click "Stylist Details" | Client list ordered by birthday|
 | **Site displays clients in order by length of relationship with salon when viewing all clients | User Input: "See All Clients" | Client list ordered by length of client relationship |
 
 
