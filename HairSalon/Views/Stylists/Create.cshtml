@@ -11,21 +11,41 @@
     @Html.TextBoxFor(model => model.Name)
 
     <fieldset>
-        <legend>Monday</legend>
+        <legend>Schedule - Select Days</legend>
 
         @Html.RadioButtonFor(s => s.Monday, true, new { id = "monday-true" })
-        @Html.Label("monday-true", "In Salon")
+        @Html.Label("monday-true", "Monday")
 
-        @Html.RadioButtonFor(e => e.Monday, false, new { id = "monday-false" })
-        @Html.Label("monday-false", "Not Working")
+        @Html.RadioButtonFor(s => s.Tuesday, true, new { id = "tuesday-true" })
+        @Html.Label("tuesday-true", "Tuesday")
+
+
+        @Html.RadioButtonFor(s => s.Wednesday, true, new { id = "wednesday-true" })
+        @Html.Label("wednesday-true", "Wednesday")
+
+        @Html.RadioButtonFor(s => s.Thursday, true, new { id = "thursday-true" })
+        @Html.Label("thursday-true", "Thursday")
+
+        @Html.RadioButtonFor(s => s.Friday, true, new { id = "friday-true" })
+        @Html.Label("friday-true", "Friday")
+
+        @Html.RadioButtonFor(s => s.Saturday, true, new { id = "saturday-true" })
+        @Html.Label("saturday-true", "Saturday")
+
+        @Html.RadioButtonFor(s => s.Sunday, true, new { id = "sunday-true" })
+        @Html.Label("sunday-true", "Sunday")
 
       </fieldset>
 
+      <input type="submit" value="Add new category" />
+}
+<p>@Html.ActionLink("Show all categories", "Index")</p>
+
+@* 
       <fieldset>
         <legend>Tuesday</legend>
 
-        @Html.RadioButtonFor(s => s.Tuesday, true, new { id = "tuesday-true" })
-        @Html.Label("tuesday-true", "In Salon")
+
 
         @Html.RadioButtonFor(e => e.Tuesday, false, new { id = "tuesday-false" })
         @Html.Label("tuesday-false", "Not Working")
@@ -34,10 +54,6 @@
 
     <fieldset>
         <legend>Wednesday</legend>
-
-        @Html.RadioButtonFor(s => s.Wednesday, true, new { id = "wednesday-true" })
-        @Html.Label("wednesday-true", "In Salon")
-
         @Html.RadioButtonFor(e => e.Wednesday, false, new { id = "wednesday-false" })
         @Html.Label("wednesday-false", "Not Working")
 
@@ -46,9 +62,7 @@
     <fieldset>
         <legend>Thursday</legend>
 
-        @Html.RadioButtonFor(s => s.Thursday, true, new { id = "thursday-true" })
-        @Html.Label("thursday-true", "In Salon")
-
+ 
         @Html.RadioButtonFor(e => e.Thursday, false, new { id = "thursday-false" })
         @Html.Label("thursday-false", "Not Working")
 
@@ -57,8 +71,7 @@
     <fieldset>
         <legend>Friday</legend>
 
-        @Html.RadioButtonFor(s => s.Friday, true, new { id = "friday-true" })
-        @Html.Label("friday-true", "In Salon")
+
 
         @Html.RadioButtonFor(e => e.Friday, false, new { id = "friday-false" })
         @Html.Label("friday-false", "Not Working")
@@ -68,8 +81,7 @@
     <fieldset>
         <legend>Saturday</legend>
 
-        @Html.RadioButtonFor(s => s.Saturday, true, new { id = "saturday-true" })
-        @Html.Label("saturday-true", "In Salon")
+
 
         @Html.RadioButtonFor(e => e.Saturday, false, new { id = "saturday-false" })
         @Html.Label("saturday-false", "Not Working")
@@ -79,16 +91,11 @@
     <fieldset>
         <legend>Sunday</legend>
 
-        @Html.RadioButtonFor(s => s.Sunday, true, new { id = "sunday-true" })
-        @Html.Label("sunday-true", "In Salon")
+
 
         @Html.RadioButtonFor(e => e.Sunday, false, new { id = "sunday-false" })
         @Html.Label("sunday-false", "Not Working")
 
-    </fieldset>
+    </fieldset> *@
 
 
-    <input type="submit" value="Add new category" />
-}
-<p>@Html.ActionLink("Show all categories", "Index")</p>
-© 2020 GitHub, Inc.
