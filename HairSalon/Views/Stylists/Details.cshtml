@@ -9,8 +9,8 @@
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 
-<h4>Days:</h4>
-@if (model => model.Monday == true)
+@* <h4>Days:</h4>
+@if (model.Monday == true)
 {
   <p>Monday</p>
 }
@@ -37,7 +37,16 @@
 @if (model => model.Sunday == true)
 {
   <p>Sunday</p>
-}
+} *@
+<h4>Days:</h4>
+<p>Monday: @Html.DisplayFor(model => model.Monday)</p>
+<p>Tuesday:@Html.DisplayFor(model => model.Tuesday)</p>
+<p>Wednesday: @Html.DisplayFor(model => model.Wednesday)</p>
+<p>Thursday: @Html.DisplayFor(model => model.Monday)</p>
+<p>Friday: @Html.DisplayFor(model => model.Friday)</p>
+<p>Saturday: @Html.DisplayFor(model => model.Saturday)</p>
+<p>Sunday: @Html.DisplayFor(model => model.Sunday)</p>
+
 <ul>
 <h4>Clients:</h4>
 @if (@Model.Clients.Count == 0)
