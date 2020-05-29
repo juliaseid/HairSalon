@@ -4,10 +4,10 @@ namespace HairSalon.Models
 {
   public class Stylist
   {
-    public Category()
-    {
-      this.Clients = new HashSet<Client>();
-    }
+    // public Category()
+    // {
+    //   this.Clients = new HashSet<Client>();
+    // }
 
     public int StylistId { get; set; }
     public string Name { get; set; }
