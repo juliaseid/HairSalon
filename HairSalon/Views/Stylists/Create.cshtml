@@ -1,0 +1,94 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist
+
+<h4>Add a new Stylist</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    <fieldset>
+        <legend>Monday</legend>
+
+        @Html.RadioButtonFor(s => s.Monday, true, new { id = "monday-true" })
+        @Html.Label("monday-true", "In Salon")
+
+        @Html.RadioButtonFor(e => e.Monday, false, new { id = "monday-false" })
+        @Html.Label("monday-false", "Not Working")
+
+      </fieldset>
+
+      <fieldset>
+        <legend>Tuesday</legend>
+
+        @Html.RadioButtonFor(s => s.Tuesday, true, new { id = "tuesday-true" })
+        @Html.Label("tuesday-true", "In Salon")
+
+        @Html.RadioButtonFor(e => e.Tuesday, false, new { id = "tuesday-false" })
+        @Html.Label("tuesday-false", "Not Working")
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Wednesday</legend>
+
+        @Html.RadioButtonFor(s => s.Wednesday, true, new { id = "wednesday-true" })
+        @Html.Label("wednesday-true", "In Salon")
+
+        @Html.RadioButtonFor(e => e.Wednesday, false, new { id = "wednesday-false" })
+        @Html.Label("wednesday-false", "Not Working")
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Thursday</legend>
+
+        @Html.RadioButtonFor(s => s.Thursday, true, new { id = "thursday-true" })
+        @Html.Label("thursday-true", "In Salon")
+
+        @Html.RadioButtonFor(e => e.Thursday, false, new { id = "thursday-false" })
+        @Html.Label("thursday-false", "Not Working")
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Friday</legend>
+
+        @Html.RadioButtonFor(s => s.Friday, true, new { id = "friday-true" })
+        @Html.Label("friday-true", "In Salon")
+
+        @Html.RadioButtonFor(e => e.Friday, false, new { id = "friday-false" })
+        @Html.Label("friday-false", "Not Working")
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Saturday</legend>
+
+        @Html.RadioButtonFor(s => s.Saturday, true, new { id = "saturday-true" })
+        @Html.Label("saturday-true", "In Salon")
+
+        @Html.RadioButtonFor(e => e.Saturday, false, new { id = "saturday-false" })
+        @Html.Label("saturday-false", "Not Working")
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Sunday</legend>
+
+        @Html.RadioButtonFor(s => s.Sunday, true, new { id = "sunday-true" })
+        @Html.Label("sunday-true", "In Salon")
+
+        @Html.RadioButtonFor(e => e.Sunday, false, new { id = "sunday-false" })
+        @Html.Label("sunday-false", "Not Working")
+
+    </fieldset>
+
+
+    <input type="submit" value="Add new category" />
+}
+<p>@Html.ActionLink("Show all categories", "Index")</p>
+© 2020 GitHub, Inc.
