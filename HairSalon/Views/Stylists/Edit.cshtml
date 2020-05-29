@@ -1,0 +1,46 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist
+
+<h2>Edit Details</h2>
+
+<h4>Edit this Stylist: @Html.DisplayFor(model => model.Name)</h4>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.StylistId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+     <fieldset>
+        <legend>Schedule - Select Days</legend>
+
+        @Html.RadioButtonFor(s => s.Monday, true, new { id = "monday-true" })
+        @Html.Label("monday-true", "Monday")
+
+        @Html.RadioButtonFor(s => s.Tuesday, true, new { id = "tuesday-true" })
+        @Html.Label("tuesday-true", "Tuesday")
+
+        @Html.RadioButtonFor(s => s.Wednesday, true, new { id = "wednesday-true" })
+        @Html.Label("wednesday-true", "Wednesday")
+
+        @Html.RadioButtonFor(s => s.Thursday, true, new { id = "thursday-true" })
+        @Html.Label("thursday-true", "Thursday")
+
+        @Html.RadioButtonFor(s => s.Friday, true, new { id = "friday-true" })
+        @Html.Label("friday-true", "Friday")
+
+        @Html.RadioButtonFor(s => s.Saturday, true, new { id = "saturday-true" })
+        @Html.Label("saturday-true", "Saturday")
+
+        @Html.RadioButtonFor(s => s.Sunday, true, new { id = "sunday-true" })
+        @Html.Label("sunday-true", "Sunday")
+
+      </fieldset>
+
+    <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to Stylists", "Index")</p>
