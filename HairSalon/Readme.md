@@ -12,9 +12,18 @@ _A project to introduce MySQL in integration with the .NET Core framework with A
 ## Setup/Installation Requirements
 
 1. Clone this repository from GitHub.
-2. Open the downloaded directory in a text editor of your choice.
-  (VSCode, Atom, etc.)
-3. Run the commands dotnet restore, dotnet build, and dotnet run to download dependencies, build the configuration, and run the program in your local browser.
+2. Install MySQL on your computer.
+3. Open the downloaded directory in a text editor of your choice. (VSCode, Atom, etc.)
+4. In your terminal, navigate to the project directory and run the commands dotnet restore and dotnet build to download dependencies and build the configuration.
+5. To run MySQL migrations and create a database in your MySQL installation, enter the following command in your terminal: ```dotnet ef database update```.  Alternately, you can download the sql database from this project directory onto your local machine and update the filepath in your settings.
+6. The application was created with MySQL login information in an appsettings.json file that was not uploaded to GitHub for security reasons.  To run the application locally, you will need to create your own appsettings.json file in the project root directory, following this format:
+```{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=YOUR PORT NUMBER HERE;database=DATABASE NAME AS YOU SAVED IT;uid=YOUR USER ID HERE;pwd=YOUR PASSWORD HERE;"
+  }
+}
+```
+7. To launch the application in your browser, from the project directory in your terminal, enter ```dotnet run``` and open a browser page at localhost:5000.
 
 ## Known Bugs
 
@@ -30,6 +39,7 @@ _Have a bug or an issue with this application? [Open a new issue] here on GitHub
 * .NET Core
 * ASP.NET Core MVC
 * MySQL
+* Entity Framework
 * MSBuild
 * Git and GitHub
 
