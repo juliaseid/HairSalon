@@ -12,18 +12,26 @@ _A project to introduce MySQL in integration with the .NET Core framework with A
 ## Setup/Installation Requirements
 
 1. Clone this repository from GitHub.
-2. Install MySQL on your computer.
+2. Install MySQL on your computer if you do not already have it.
 3. Open the downloaded directory in a text editor of your choice. (VSCode, Atom, etc.)
 4. In your terminal, navigate to the project directory and run the commands dotnet restore and dotnet build to download dependencies and build the configuration.
-5. To run MySQL migrations and create a database in your MySQL installation, enter the following command in your terminal: ```dotnet ef database update```.  Alternately, you can download the sql database from this project directory onto your local machine and update the filepath in your settings.
-6. The application was created with MySQL login information in an appsettings.json file that was not uploaded to GitHub for security reasons.  To run the application locally, you will need to create your own appsettings.json file in the project root directory, following this format:
+5. To create the MySQL database and appropriate tables, log in to your MySQL installation through your terminal.
+6. Enter the following command:
+    ```CREATE database julia_seidman```
+7. If you want to upload the database from your cloned repository into MySQL, use the following command:
+    ```mysql -u root -p [julia_seidman] < *filepath to where you saved database julia_seidman```
+8. Otherwise, you can create the tables directly.  Enter the following sequence of MySQL commands:
+    ```USE julia_seidman```
+    ```ADD TABLE clients (ClientId INT NOT NULL AUTO_INCREMENT, FirstName VARCHAR(255), LastName VARCHAR(255) NOT NULL, Phone VARCHAR(255) NOT NULL, StylistId INT NOT NULL, Birthday DATETIME, ClientSince DATETIME, PRIMARY KEY (ClientId));```
+    ```ADD TABLE stylists (StylistId INT NOT NULL AUTO_INCREMENT, Name VARCHAR(255) NOT NULL, Days VARCHAR(255), Monday TINYINT(1), Tuesday TINYINT(1), Wednesday TINYINT(1), Thursday TINYINT(1), Friday TINYINT(1), Saturday TINYINT(1), Sunday TINYINT(1), PRIMARY KEY(StylistId) );```
+8. The application was created with MySQL login information in an appsettings.json file that was not uploaded to GitHub for security reasons.  To run the application locally, you will need to create your own appsettings.json file in the project root directory, following this format:
 ```{
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=YOUR PORT NUMBER HERE;database=DATABASE NAME AS YOU SAVED IT;uid=YOUR USER ID HERE;pwd=YOUR PASSWORD HERE;"
   }
 }
 ```
-7. To launch the application in your browser, from the project directory in your terminal, enter ```dotnet run``` and open a browser page at localhost:5000.
+9. To launch the application in your browser, from the project directory in your terminal, enter ```dotnet run``` and open a browser page at localhost:5000.
 
 ## Known Bugs
 
